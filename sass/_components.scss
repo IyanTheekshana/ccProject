@@ -1,0 +1,146 @@
+.front--img {
+  position: relative;
+  z-index: 5;
+  color: var(--white);
+
+  &__svg {
+    position: absolute;
+    z-index: 10;
+    top: 1.2rem;
+    left: 2rem;
+  }
+
+  &__cardNumber {
+    position: absolute;
+    bottom: 4.5rem;
+    left: 2rem;
+
+    font-size: 25px;
+    letter-spacing: 3px;
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 2.2rem;
+    left: 2rem;
+    font-size: 14px;
+  }
+
+  &__expire {
+    position: absolute;
+    bottom: 2.2rem;
+    right: 2rem;
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 400px;
+    transform: translateX(-80px) translateY(-10px);
+    margin-left: 40px;
+  }
+}
+
+.back--img {
+  position: relative;
+  color: var(--white);
+  transform: translateX(100px);
+  margin-top: 20px;
+  z-index: 2;
+
+  &__cvv {
+    position: absolute;
+    top: 6.25rem;
+    right: 3.3rem;
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    transform: translateX(35px) translateY(100px);
+    max-width: 400px;
+    margin-right: 40px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    &-dateandcvv {
+      display: flex;
+
+      &--exp {
+        flex-basis: 50%;
+      }
+
+      &--cvv {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  span {
+    display: none;
+  }
+
+  &__input {
+    width: 100%;
+    height: 35px;
+    padding: 20px 10px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+
+    &:focus,
+    &:active {
+      border: 1px solid var(--linear-gradient);
+    }
+
+    &:focus:invalid {
+      border: 1px solid var(--red);
+    }
+
+    &::placeholder {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    &#expDateMonthInput {
+      width: 40%;
+    }
+
+    &#expDateYearInput {
+      width: 40%;
+    }
+
+    &:focus:invalid:has(span) {
+      display: block;
+    }
+  }
+
+  &__label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &-date {
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.btn {
+  background-color: var(--very-dark-violet);
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px 10px;
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

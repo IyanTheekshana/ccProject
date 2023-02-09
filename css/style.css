@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+  --linear-gradient: hsl(249, 99%, 64%);
+  --red: hsl(0, 100%, 66%); }
+
+html {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px; }
+
+.main {
+  height: 100vh;
+  display: flex; }
+  @media only screen and (max-width: 600px) {
+    .main {
+      flex-direction: column; } }
+
+.front--img {
+  position: relative;
+  z-index: 5;
+  color: var(--white); }
+  .front--img__svg {
+    position: absolute;
+    z-index: 10;
+    top: 1.2rem;
+    left: 2rem; }
+  .front--img__cardNumber {
+    position: absolute;
+    bottom: 4.5rem;
+    left: 2rem;
+    font-size: 25px;
+    letter-spacing: 3px; }
+  .front--img__name {
+    position: absolute;
+    bottom: 2.2rem;
+    left: 2rem;
+    font-size: 14px; }
+  .front--img__expire {
+    position: absolute;
+    bottom: 2.2rem;
+    right: 2rem;
+    font-size: 14px; }
+  @media only screen and (max-width: 600px) {
+    .front--img {
+      max-width: 400px;
+      transform: translateX(-80px) translateY(-10px);
+      margin-left: 40px; } }
+
+.back--img {
+  position: relative;
+  color: var(--white);
+  transform: translateX(100px);
+  margin-top: 20px;
+  z-index: 2; }
+  .back--img__cvv {
+    position: absolute;
+    top: 6.25rem;
+    right: 3.3rem;
+    font-size: 14px; }
+  @media only screen and (max-width: 600px) {
+    .back--img {
+      transform: translateX(35px) translateY(100px);
+      max-width: 400px;
+      margin-right: 40px; } }
+
+.form {
+  display: flex;
+  flex-direction: column; }
+  .form__group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem; }
+    .form__group-dateandcvv {
+      display: flex; }
+      .form__group-dateandcvv--exp {
+        flex-basis: 50%; }
+      .form__group-dateandcvv--cvv {
+        flex-basis: 50%; }
+  .form span {
+    display: none; }
+  .form__input {
+    width: 100%;
+    height: 35px;
+    padding: 20px 10px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none; }
+    .form__input:focus, .form__input:active {
+      border: 1px solid var(--linear-gradient); }
+    .form__input:focus:invalid {
+      border: 1px solid var(--red); }
+    .form__input::placeholder {
+      font-family: "Space Grotesk", sans-serif; }
+    .form__input#expDateMonthInput {
+      width: 40%; }
+    .form__input#expDateYearInput {
+      width: 40%; }
+    .form__input:focus:invalid:has(span) {
+      display: block; }
+  .form__label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase; }
+    .form__label-date {
+      letter-spacing: 1px; }
+
+.btn {
+  background-color: var(--very-dark-violet);
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px 10px;
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer; }
+
+.col--left {
+  background-image: url("../images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative; }
+  @media only screen and (max-width: 600px) {
+    .col--left {
+      background-image: url("../images/bg-main-mobile.png");
+      flex-basis: 100%;
+      justify-content: center;
+      max-height: 40vh;
+      padding: 70px 25px 0 25px; } }
+
+.col--right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 60%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; }
+  @media only screen and (max-width: 600px) {
+    .col--right {
+      flex-basis: 100%;
+      max-width: 90%; } }
+
+.center-images {
+  transform: translateX(70px);
+  display: flex;
+  flex-direction: column-reverse; }
+  @media only screen and (max-width: 600px) {
+    .center-images {
+      transform: translateX(0);
+      flex-direction: column; } }
