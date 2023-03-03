@@ -147,6 +147,7 @@ html {
 
 .col--right {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-basis: 60%;
@@ -159,6 +160,11 @@ html {
       max-width: 90%;
       padding-top: 10rem;
       padding-bottom: 2rem; } }
+
+.disclaim {
+  align-self: center;
+  margin-top: 3rem;
+  color: #d3d3d3; }
 
 .center-images {
   transform: translateX(70px);

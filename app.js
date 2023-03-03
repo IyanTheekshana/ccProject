@@ -13,6 +13,7 @@ const app = Vue.createApp({
       return this.code != 0
         ? this.code
             .match(/.{1,4}/g)
+
             .join(" ")
             .slice(0, 20)
         : "0000 0000 0000 0000";
