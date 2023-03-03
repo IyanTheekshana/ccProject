@@ -28,7 +28,8 @@ html {
 .front--img {
   position: relative;
   z-index: 5;
-  color: var(--white); }
+  color: var(--white);
+  width: 80%; }
   .front--img__svg {
     position: absolute;
     z-index: 10;
