@@ -59,7 +59,10 @@
       </div>
       <div class="col--right">
         <div class="center-form">
-          <form action="" class="form">
+          <p class="errorMsg" v-if="isInvalid">
+            All the input fields are required
+          </p>
+          <form class="form" @submit.prevent="checkValidity">
             <div class="form__group">
               <label for="nInput" class="form__label">Cardholder name</label>
               <input
@@ -67,10 +70,9 @@
                 class="form__input"
                 placeholder="e.g. Jane Appleseed"
                 id="nInput"
-                required
+                maxlength="32"
                 v-model="username"
               />
-              <span>Name Required</span>
             </div>
             <div class="form__group">
               <label for="cnInput" class="form__label">Card Number</label>
@@ -81,9 +83,7 @@
                 id="cnInput"
                 maxlength="16"
                 v-model="code"
-                required
               />
-              <span>Wrong format, numbers only</span>
             </div>
             <div class="form__group-dateandcvv">
               <div class="form__group form__group-dateandcvv--exp">
@@ -100,7 +100,6 @@
                     id="expDateMonthInput"
                     maxlength="2"
                     v-model="month"
-                    required
                   />
                   <input
                     type="text"
@@ -109,7 +108,6 @@
                     id="expDateYearInput"
                     maxlength="2"
                     v-model="year"
-                    required
                   />
                 </div>
               </div>
@@ -122,13 +120,12 @@
                   id="cvvInput"
                   maxlength="3"
                   v-model="cvc"
-                  required
                   number
                 />
               </div>
             </div>
             <div class="form__group">
-              <button class="btn">Confirm</button>
+              <button class="btn" type="submit">Confirm</button>
             </div>
           </form>
         </div>

@@ -6,6 +6,7 @@ const app = Vue.createApp({
       month: "",
       year: "",
       cvc: "",
+      isInvalid: false,
     };
   },
   methods: {
@@ -13,7 +14,6 @@ const app = Vue.createApp({
       return this.code != 0
         ? this.code
             .match(/.{1,4}/g)
-
             .join(" ")
             .slice(0, 20)
         : "0000 0000 0000 0000";
@@ -26,6 +26,21 @@ const app = Vue.createApp({
     },
     setYear() {
       return this.year ? this.year : "00";
+    },
+    checkValidity() {
+      if (
+        this.username === "" ||
+        this.code === "" ||
+        this.month === "" ||
+        this.year === "" ||
+        this.cvc === ""
+      ) {
+        this.isInvalid = true;
+      }
+
+      setTimeout(() => {
+        this.isInvalid = false;
+      }, 3000);
     },
   },
 });
