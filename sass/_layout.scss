@@ -8,7 +8,7 @@
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       background-image: url("../images/bg-main-mobile.png");
       flex-basis: 100%;
       justify-content: center;
@@ -25,9 +25,11 @@
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       flex-basis: 100%;
       max-width: 90%;
+      padding-top: 10rem;
+      padding-bottom: 2rem;
     }
   }
 }
@@ -36,7 +38,7 @@
   transform: translateX(70px);
   display: flex;
   flex-direction: column-reverse;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     transform: translateX(0);
     flex-direction: column;
   }

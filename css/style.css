@@ -21,7 +21,7 @@ html {
 .main {
   height: 100vh;
   display: flex; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .main {
       flex-direction: column; } }
 
@@ -50,7 +50,7 @@ html {
     bottom: 2.2rem;
     right: 2rem;
     font-size: 14px; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .front--img {
       max-width: 400px;
       transform: translateX(-80px) translateY(-10px);
@@ -67,7 +67,7 @@ html {
     top: 6.25rem;
     right: 3.3rem;
     font-size: 14px; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .back--img {
       transform: translateX(35px) translateY(100px);
       max-width: 400px;
@@ -136,7 +136,7 @@ html {
   justify-content: flex-end;
   align-items: center;
   position: relative; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .col--left {
       background-image: url("../images/bg-main-mobile.png");
       flex-basis: 100%;
@@ -152,16 +152,18 @@ html {
   width: 100%;
   max-width: 400px;
   margin: 0 auto; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .col--right {
       flex-basis: 100%;
-      max-width: 90%; } }
+      max-width: 90%;
+      padding-top: 10rem;
+      padding-bottom: 2rem; } }
 
 .center-images {
   transform: translateX(70px);
   display: flex;
   flex-direction: column-reverse; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .center-images {
       transform: translateX(0);
       flex-direction: column; } }
