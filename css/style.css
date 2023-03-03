@@ -103,7 +103,8 @@ html {
     .form__input::placeholder {
       font-family: "Space Grotesk", sans-serif; }
     .form__input#expDateMonthInput {
-      width: 40%; }
+      width: 40%;
+      margin-right: 10px; }
     .form__input#expDateYearInput {
       width: 40%; }
     .form__input:focus:invalid:has(span) {

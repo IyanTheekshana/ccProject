@@ -9,13 +9,22 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    codeSpliter() {
+    codeNumber() {
       return this.code != 0
         ? this.code
             .match(/.{1,4}/g)
             .join(" ")
             .slice(0, 20)
-        : "1234 56789 9123 0000";
+        : "0000 0000 0000 0000";
+    },
+    userName() {
+      return this.username ? this.username : "Jane Appleseed";
+    },
+    setMonth() {
+      return this.month ? this.month : "09";
+    },
+    setYear() {
+      return this.year ? this.year : "00";
     },
   },
 });

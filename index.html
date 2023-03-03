@@ -39,7 +39,7 @@
         <div class="center-images">
           <div class="back--img">
             <img src="images/bg-card-back.png" alt="front card" />
-            <p class="back--img__cvv">000</p>
+            <p class="back--img__cvv">{{cvc}}</p>
           </div>
           <div class="front--img">
             <img src="images/bg-card-front.png" alt="front card" />
@@ -49,9 +49,11 @@
               alt="card logo"
               class="front--img__svg"
             />
-            <p class="front--img__cardNumber">{{codeSpliter()}}</p>
-            <p class="front--img__name">{{username}}</p>
-            <p class="front--img__expire">09/00</p>
+            <p class="front--img__cardNumber">{{codeNumber()}}</p>
+            <p class="front--img__name">{{userName()}}</p>
+            <p class="front--img__expire">
+              <span>{{setMonth()}}</span>/<span>{{setYear()}}</span>
+            </p>
           </div>
         </div>
       </div>
@@ -75,10 +77,9 @@
               <input
                 type="text"
                 class="form__input"
-                placeholder="e.g. 1234 56789 9123 0000"
+                placeholder="e.g. 1234 5678 9123 0000"
                 id="cnInput"
-                min="16"
-                max="16"
+                maxlength="16"
                 v-model="code"
                 required
               />
@@ -97,6 +98,8 @@
                     class="form__input form__input-month"
                     placeholder="MM"
                     id="expDateMonthInput"
+                    maxlength="2"
+                    v-model="month"
                     required
                   />
                   <input
@@ -104,6 +107,8 @@
                     class="form__input form__input-year"
                     placeholder="YY"
                     id="expDateYearInput"
+                    maxlength="2"
+                    v-model="year"
                     required
                   />
                 </div>
@@ -115,7 +120,10 @@
                   class="form__input"
                   placeholder="e.g. 123"
                   id="cvvInput"
+                  maxlength="3"
+                  v-model="cvc"
                   required
+                  number
                 />
               </div>
             </div>
